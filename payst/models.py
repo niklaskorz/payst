@@ -1,4 +1,6 @@
-from payst import data
+from __future__ import absolute_import, print_function
+from . import data
+from .data import NotFoundException
 import uuid
 
 
@@ -25,7 +27,4 @@ class Paste(object):
     @classmethod
     def get(cls, _id):
         paste = data.paste_cf.get(_id)
-        if paste:
-            return cls(_id=_id, **paste)
-        else:
-            return None
+        return cls(_id=_id, **paste)

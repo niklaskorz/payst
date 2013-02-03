@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Payst - {{paste.id}}</title>
+        <title>{{data.name}} ({{data.lang}})</title>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
         <style>
-.syntaxtable { background-color: #fefefe; padding: 0 5px; border: 1px solid silver; border-radius: 5px; }
-.syntaxtable .linenos { border-right: 1px solid silver; padding-right: 5px; }
 .syntax .hll { background-color: #ffffcc }
-.syntax  { background: #fefefe; padding: 0 10px; }
+.syntax  { background: #fefefe; }
 .syntax .c { color: #60a0b0; font-style: italic } /* Comment */
 .syntax .err { border: 1px solid #FF0000 } /* Error */
 .syntax .k { color: #007020; font-weight: bold } /* Keyword */
@@ -71,10 +71,10 @@
         </style>
     </head>
     <body>
-        {{#paste}}
-            <h1>{{name}} ({{lang}})</h1>
-            <p>{{description}}</p>
-            {{{highlighted_code}}}
-        {{/paste}}
+        <div class="container">
+            <h1>{{data.name}} ({{data.lang}})</h1>
+            <p>{{data.description}}</p>
+            {{{data.highlighted_code}}}
+        </div>
     </body>
 </html>
